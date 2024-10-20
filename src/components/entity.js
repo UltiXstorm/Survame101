@@ -3,6 +3,10 @@ import {Layout} from "../main.jsx";
 
 
 export class Entity {
+	statistic = {
+		speed: 0,
+	}
+	
 	constructor() {
 		const bodyGeometry = new THREE.BoxGeometry(1,1,1);
 		const bodyMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } );
@@ -27,10 +31,9 @@ export class Entity {
 		Layout.scene.add(this.entity);
 	}
 	
-	rotate = (x=0,y=0,z=0) => {
-		this.entity.rotation.x += x;
-		this.entity.rotation.y += y;
-		this.entity.rotation.z += z;
+	move = (x=0, z=0) => {
+		this.entity.position.x += x*this.statistic.speed;
+		this.entity.position.z += z*this.statistic.speed;
 	}
 }
 

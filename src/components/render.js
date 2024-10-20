@@ -4,7 +4,7 @@ export class Render {
 	constructor() {
 		this.scene = new THREE.Scene();
 		this.camera = new THREE.PerspectiveCamera(75, innerWidth/innerHeight, 0.1, 1000);
-		this.light = new THREE.PointLight( 0xffffff );
+		this.light = new THREE.HemisphereLight( 0xffffff, 0x1111ff, 1 );
 		this.renderer = new THREE.WebGLRenderer();
 		
 		this.camera.position.set(0, 2, 2);
