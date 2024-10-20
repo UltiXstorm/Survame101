@@ -14,10 +14,16 @@ export class Entity {
 		const canon = new THREE.Mesh(canonGeometry, canonMaterial);
 		canon.position.set(0.75, 0.2, 0);
 		
+		const aimGeometry = new THREE.BoxGeometry(0.3,0.1,0.1);
+		const aimMaterial = new THREE.MeshPhongMaterial( { color: 0xff4444 } );
+		const aim = new THREE.Mesh(aimGeometry, aimMaterial);
+		aim.position.set(0.35, 0.55, 0);
+		
 		
 		this.entity = new THREE.Group();
-		this.entity.add(canon);
 		this.entity.add(body);
+		this.entity.add(canon);
+		this.entity.add(aim);
 		Layout.scene.add(this.entity);
 	}
 	
