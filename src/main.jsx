@@ -1,7 +1,11 @@
-import { createRoot } from 'react-dom/client'
 import './index.css'
-import {Canvas} from "./render.js";
+import {Render} from "./components/render.js";
+import {loop} from "./components/loop.js";
+import {Entity} from "./components/entity.js";
 
-createRoot(document.getElementById('root')).render(
-  <Canvas className="canvas"/>
-)
+export const Layout = new Render();
+
+export const Player = new Entity();
+
+loop(Layout);
+
